@@ -1,0 +1,1 @@
+export default function HelpPage(){ return <div><h1 className='text-3xl font-bold'>Help Center + FAQ</h1><ul className='list-disc pl-6 text-sm'><li>How does snake draft work?</li><li>How to join via invite code?</li></ul></div>; }

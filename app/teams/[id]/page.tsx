@@ -1,0 +1,2 @@
+import { prisma } from '@/lib/db/prisma';
+export default async function TeamDetail({params}:{params:{id:string}}){ const t=await prisma.team.findUnique({where:{id:params.id},include:{players:true}}); if(!t) return <div>Not found</div>; return <div><h1 className='text-3xl font-bold'>{t.name}</h1><p>{t.region} {t.collegeAffiliation?`· ${t.collegeAffiliation}`:''}</p><ul>{t.players.slice(0,8).map((p)=><li key={p.id}>{p.name}</li>)}</ul></div>; }

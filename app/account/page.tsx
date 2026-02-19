@@ -1,0 +1,1 @@
+export default function AccountPage(){ return <div className='space-y-3'><h1 className='text-3xl font-bold'>My Account</h1><p className='text-sm text-muted'>Settings, notifications, auth session, preferences.</p></div>; }

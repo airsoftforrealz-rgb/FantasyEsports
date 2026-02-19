@@ -1,0 +1,2 @@
+import Link from 'next/link'; import { prisma } from '@/lib/db/prisma'; import { Card } from '@/components/ui/card';
+export default async function LeaguesPage(){const leagues=await prisma.league.findMany(); return <div><h1 className='mb-4 text-3xl font-bold'>Leagues</h1><div className='grid gap-3'>{leagues.map((l)=><Card key={l.id}><Link href={`/leagues/${l.id}`}>{l.name}</Link></Card>)}</div></div>}

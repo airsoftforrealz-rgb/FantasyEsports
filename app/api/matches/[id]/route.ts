@@ -1,0 +1,2 @@
+import { NextRequest, NextResponse } from 'next/server'; import { prisma } from '@/lib/db/prisma';
+export async function GET(_:NextRequest,{params}:{params:{id:string}}){const data=await prisma.match.findUnique({where:{id:params.id},include:{homeTeam:true,awayTeam:true,maps:true,statLines:true}}); return data?NextResponse.json({success:true,data}):NextResponse.json({success:false,error:'Not found'},{status:404});}
