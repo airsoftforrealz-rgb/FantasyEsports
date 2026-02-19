@@ -1,0 +1,2 @@
+import { NextRequest, NextResponse } from 'next/server'; import { prisma } from '@/lib/db/prisma';
+export async function POST(req:NextRequest){ const {inviteCode,userId}=await req.json(); const league=await prisma.league.findUnique({where:{inviteCode}}); if(!league) return NextResponse.json({success:false,error:'Invalid code'},{status:404}); const member=await prisma.leagueMembership.create({data:{leagueId:league.id,userId,role:'manager'}}); return NextResponse.json({success:true,data:member}); }
