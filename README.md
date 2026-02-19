@@ -34,3 +34,6 @@ Production-style Next.js SPA fantasy esports app centered on Valorant-style play
 
 ## Key flow
 Join league → enter draft lobby (snake + mock actions) → manage roster slots → watch live leaderboard movement.
+
+## Python backend option
+A FastAPI-based backend alternative is available under `python_backend/` with comparable core endpoints and SSE live leaderboard stream. See `python_backend/README.md` for setup.
