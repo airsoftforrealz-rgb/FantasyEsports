@@ -1,0 +1,2 @@
+import { prisma } from '@/lib/db/prisma'; import { MatchCard } from '@/components/cards/match-card';
+export default async function MatchesPage(){ const matches=await prisma.match.findMany({take:60,include:{homeTeam:true,awayTeam:true}}); return <div><h1 className='mb-4 text-3xl font-bold'>Schedule</h1><div className='grid gap-3 md:grid-cols-3'>{matches.map((m)=><MatchCard key={m.id} id={m.id} teams={`${m.homeTeam.name} vs ${m.awayTeam.name}`} status={m.status} />)}</div></div>; }
