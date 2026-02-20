@@ -1,0 +1,1 @@
+export default function PrivacyPage(){ return <div><h1 className='text-3xl font-bold'>Privacy</h1><p className='text-sm text-muted'>We store demo credentials and fantasy stats in local SQLite.</p></div>; }

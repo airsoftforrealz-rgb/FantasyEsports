@@ -1,0 +1,2 @@
+import { NextRequest, NextResponse } from 'next/server'; import { prisma } from '@/lib/db/prisma';
+export async function GET(req:NextRequest){ const period=req.nextUrl.searchParams.get('period')||'weekly'; const data=await prisma.leaderboardSnapshot.findMany({where:{period},include:{user:true},take:500,orderBy:{points:'desc'}}); return NextResponse.json({success:true,data:data.map((d,i)=>({...d,rank:i+1}))}); }
