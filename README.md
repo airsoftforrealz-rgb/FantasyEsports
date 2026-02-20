@@ -9,6 +9,9 @@ Production-style Next.js SPA fantasy esports app centered on Valorant-style play
 - Prisma + SQLite
 - SSE live leaderboards demo stream
 
+## Need a fast localhost run guide?
+See `QUICKSTART_LOCAL.md` for copy/paste commands (macOS/Linux + Windows PowerShell) for both the website UI and Python backend.
+
 ## Setup
 1. `npm install`
 2. `cp .env.example .env`
